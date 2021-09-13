@@ -5,7 +5,7 @@ var numArray = [];
 function addElement() {
     var num = parseInt(document.querySelector("#inputNumber").value);
     numArray.push(num);
-    console.log(numArray);
+    //console.log(numArray);
     document.getElementById("txt0").innerHTML = String("Mảng: " + numArray);
 }
 document.getElementById("btn0").onclick = addElement;
@@ -19,7 +19,7 @@ function sumInt() {
             sum += numArray[i];
         }
     }
-    console.log(sum);
+    //console.log(sum);
     document.getElementById("txt1").innerHTML = String("Tổng của các số dương: " + sum);
 }
 document.getElementById("btn1").onclick = sumInt;
@@ -34,7 +34,7 @@ function countPosInt() {
             count++;
         }
     }
-    console.log(count);
+    //console.log(count);
     document.getElementById("txt2").innerHTML = String("Số lượng số nguyên dương: " + count);
 }
 document.getElementById("btn2").onclick = countPosInt;
@@ -73,7 +73,7 @@ document.getElementById("btn4").onclick = findMinPosInt;
 
 
 
-//BÀI 5 - TÌM SỐ CHẴN CUỐI CÙNG TRONG MẢNG. NẾU MẢNG KHÔNG CÓ GIÁ TRỊ THÌ TRẢ VỀ -1
+//BÀI 5 - TÌM SỐ CHẴN CUỐI CÙNG TRONG MẢNG. 
 function fineLastPosInt() {
     var viTri;
     var last = numArray[viTri]
@@ -82,14 +82,12 @@ function fineLastPosInt() {
             if (numArray[i] % 2 == 0) {
                 viTri = i;
                 last = numArray[i];
-            }else{
-                last = "Không có số chẵn";
             }
         }
         document.getElementById("txt5").innerHTML = String("Số chẵn cuối cùng trong mảng: " + last);
     } else {
-        console.log("Mảng trống");
-        document.getElementById("txt5").innerHTML = String("Mảng không có giá trị: -1");
+        //console.log("Mảng trống");
+        document.getElementById("txt5").innerHTML = String("Mảng không có giá trị. Vui lòng thêm các giá trị cho mảng");
     }
 }
 document.getElementById("btn5").onclick = fineLastPosInt;
@@ -103,7 +101,7 @@ function exchangeIndex() {
     var temp = 0;
     [numArray[index1], numArray[index2]] = [numArray[index2], numArray[index1]]
 
-    console.log(numArray);
+    //console.log(numArray);
     document.getElementById("txt6").innerHTML = String("Mảng sau khi đổi " + numArray);
 }
 document.getElementById("btn6").onclick = exchangeIndex;
@@ -123,7 +121,7 @@ function sapXepTang() {
             }
         }
     }
-    console.log(numArray);
+    //console.log(numArray);
     document.getElementById("txt7").innerHTML = String("Mảng sau sắp xếp " + numArray);
 }
 document.getElementById("btn7").onclick = sapXepTang;
@@ -154,16 +152,16 @@ function kiemTraSNT(n) {
             }
         }
     }
-
     return flag;
 }
+
 //Hàm tìm số nguyên tố đầu tiên
 function timSNT() {
     for (var i = 0; i < numArray.length; i++) {
        var flag = kiemTraSNT(numArray[i]);
-        if (flag == true) {
+      if (flag == true) {
             var num = numArray[i];
-            console.log(num);
+            //console.log(num);
             break;
         }
     }
@@ -179,7 +177,7 @@ var numArray1 = [];
 function addElement1() {
     var num = parseFloat(document.querySelector("#inputSoThuc").value);
     numArray1.push(num);
-    console.log(typeof(numArray1));
+    //console.log(typeof(numArray1));
     document.getElementById("txt9a").innerHTML = String("Mảng số thực: " + numArray1);
 }
 document.getElementById("btn9a").onclick = addElement1;
@@ -192,7 +190,7 @@ for (var i = 0; i < numArray1.length; i++){
       count++;
   }
 }
-console.log ("count  " +count);
+//console.log ("count  " +count);
 document.getElementById("txt9").innerHTML = String("Tổng các số nguyên trong mảng: " +count);
 }
 document.getElementById("btn9").onclick = sumINT;
@@ -210,7 +208,7 @@ function sumNevPos() {
             sumNev ++;
         }
     }
-    console.log(sumPos, sumNev);
+    //console.log(sumPos, sumNev);
     if (sumPos>sumNev){
         document.getElementById("txt10").innerHTML = String("Số dương > Số âm");
     }else if(sumPos<sumNev){
