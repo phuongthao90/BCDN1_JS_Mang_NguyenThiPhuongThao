@@ -154,12 +154,13 @@ function kiemTraSNT(n) {
     }
     return flag;
 }
-
 //Hàm tìm số nguyên tố đầu tiên
 function timSNT() {
     for (var i = 0; i < numArray.length; i++) {
-       var flag = kiemTraSNT(numArray[i]);
-      if (flag == true) {
+        var flag = kiemTraSNT(numArray[i]);
+        if (flag == false) {
+            var num = "Không có số nguyên tố nào";
+        } else {
             var num = numArray[i];
             //console.log(num);
             break;
@@ -183,15 +184,15 @@ function addElement1() {
 document.getElementById("btn9a").onclick = addElement1;
 
 //Hàm đếm số nguyên trong mảng số thực
-function sumINT(){
+function sumINT() {
     var count = 0;
-for (var i = 0; i < numArray1.length; i++){
-  if(Number.isInteger(numArray1[i])){
-      count++;
-  }
-}
-//console.log ("count  " +count);
-document.getElementById("txt9").innerHTML = String("Tổng các số nguyên trong mảng: " +count);
+    for (var i = 0; i < numArray1.length; i++) {
+        if (Number.isInteger(numArray1[i])) {
+            count++;
+        }
+    }
+    //console.log ("count  " +count);
+    document.getElementById("txt9").innerHTML = String("Tổng các số nguyên trong mảng: " + count);
 }
 document.getElementById("btn9").onclick = sumINT;
 
@@ -203,20 +204,20 @@ function sumNevPos() {
     var sumNev = 0;
     for (var i = 0; i < numArray.length; i++) {
         if (numArray[i] > 0) {
-            sumPos ++;
-        }else if (numArray[i] < 0){
-            sumNev ++;
+            sumPos++;
+        } else if (numArray[i] < 0) {
+            sumNev++;
         }
     }
     //console.log(sumPos, sumNev);
-    if (sumPos>sumNev){
+    if (sumPos > sumNev) {
         document.getElementById("txt10").innerHTML = String("Số dương > Số âm");
-    }else if(sumPos<sumNev){
+    } else if (sumPos < sumNev) {
         document.getElementById("txt10").innerHTML = String("Số dương < Số âm");
-    }else if (sumPos=sumNev){
+    } else if (sumPos = sumNev) {
         document.getElementById("txt10").innerHTML = String("Số dương = Số âm");
-    
+
     }
-} 
+}
 document.getElementById("btn10").onclick = sumNevPos;
 
